@@ -1,0 +1,43 @@
+YEF WEBSITE REFINEMENT - CHANGELOG AND QA REPORT
+
+SOURCE REVIEWED
+The supplied ZIP contained 37 files: eight HTML pages, seven JavaScript files, eight CSS files, font assets and a template licence/debug file. The original website archive did not include an images/ directory. A separate 30-file images.zip was subsequently supplied and integrated.
+
+CHANGES MADE
+1. Updated all supplied HTML documents to declare English as the page language.
+2. Added page-specific titles, descriptions and keyword metadata.
+3. Added descriptive alternative text to the existing logo image references.
+4. Corrected the legacy sponsor navigation destination so it no longer points to a missing sponsor-a-child.html page.
+5. Reworked the legacy sponser.html page title, heading, contact phone/email and sponsor navigation text to remove unrelated Charity Hope identity details. The original filename is retained to avoid breaking existing references.
+6. Rebuilt the donate page content while retaining the existing Bootstrap/CSS architecture and page layout conventions.
+7. Added NGN, USD, GBP and EUR selection, suggested amounts, custom amount validation, donation purpose, frequency selection and donor name/email fields.
+8. Added the existing YEF NGN and USD Ecobank account details with a copy-account-number control.
+9. GBP and EUR display a clear instruction to contact YEF because no bank accounts for those currencies were supplied.
+10. Added a prefilled email enquiry link to yerwaefoundation2020@gmail.com.
+11. Added responsive donation styles to the end of the existing stylesheet rather than replacing the original styles.
+12. Added Vercel static deployment configuration, an optional Apache .htaccess example, a basic 404 page and deployment instructions.
+
+TESTS PERFORMED
+- ZIP integrity test: passed.
+- Python HTML parser pass across all eight supplied pages and the new 404 page: passed. This is a parser check, not a full standards-compliance audit.
+- Node.js syntax check of the new donation-page JavaScript: passed.
+- Local link/asset reference scan: performed. It identified missing image/video assets listed below.
+
+KNOWN ITEMS REQUIRING YEF INPUT OR FURTHER IMPLEMENTATION
+1. The separate images.zip has been integrated into the website as images/. The 30 supplied files include the YEF logo, gallery, activity, team, slider and testimonial images. The website references were checked against the supplied folder. The original images.zip remains unchanged.
+2. The source contains conflicting email addresses across pages: yerwaefoundation2020@gmail.com, yerwaefoundation2020@gmail.com, yerwaefoundation2020@gmail.com and yerwaefoundation2020@gmail.com. Confirm the official public contact email and standardise it before launch.
+3. The source contains placeholder social links using href="#". Supply verified social media URLs before making them active.
+4. The contact form and newsletter form still need a secure server-side or approved third-party submission endpoint. They are not represented as working submissions in this package.
+5. The donation page is currently bank-transfer information and email enquiry only. No payment gateway credentials or backend were supplied. No online card payments, verified transactions, automated receipts or automatic recurring donations are active.
+6. No GBP or EUR receiving bank accounts were supplied.
+7. The current archive has no backend or database. This package remains a static HTML/CSS/JavaScript website.
+8. A full browser-based responsive, accessibility, security and live-hosting test remains necessary after the missing assets and service integrations are supplied.
+
+DEPLOYMENT
+The frontend is static and intended to run on Vercel and standard cPanel shared hosting. Upload the contents of the extracted folder so index.html sits at the web root. Server-side features require a compatible backend implementation and must not be assumed to work from static hosting alone.
+
+IMAGE ASSET INTEGRATION
+- Added all 30 supplied image files under images/.
+- Optimised JPEG and PNG files for web delivery while preserving filenames and formats.
+- Kept the original uploaded images.zip unchanged as the source archive.
+- Standardised visible contact email and mailto links to yerwaefoundation2020@gmail.com.
